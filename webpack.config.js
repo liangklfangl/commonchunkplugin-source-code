@@ -12,14 +12,16 @@ module.exports = {
         publicPath: 'builds/',
     },
     plugins: [
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     // async: true,
-        //     name:      'main', // Move dependencies to our main file
-        //     children:  true, // Look for common dependencies in all children,
-        //     minChunks: 2, // How many times a dependency must come up before being extracted
-        // }),
 
-        
+        //配置aync的demo
+        new webpack.optimize.CommonsChunkPlugin({
+            async: true,
+            name:     ['main','main1'], // Move dependencies to our main file
+            minChunks: 2, // How many times a dependency must come up before being extracted
+        }),
+
+          
+          //配置children的demo
          // new webpack.optimize.CommonsChunkPlugin({
          //        filename:'[name].bundle.js',
          //        children:true,
@@ -27,11 +29,13 @@ module.exports = {
          //        minChunks: 2, // How many times a dependency must come up before being extracted
          //    }),
 
-           new webpack.optimize.CommonsChunkPlugin({
-                filename:'[name].bundle.js',
-                name:      ['main','main1'], // Move dependencies to our main file
-                minChunks: 2, // How many times a dependency must come up before being extracted
-            }),
+
+           //没有children和async的配置
+           // new webpack.optimize.CommonsChunkPlugin({
+           //      filename:'[name].bundle.js',
+           //      name:      ['main','main1'], // Move dependencies to our main file
+           //      minChunks: 2, // How many times a dependency must come up before being extracted
+           //  }),
 
     ],
     module: {

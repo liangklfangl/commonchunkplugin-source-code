@@ -19,12 +19,7 @@
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
 /******/ 		while(resolves.length)
 /******/ 			resolves.shift()();
-/******/ 		if(executeModules) {
-/******/ 			for(i=0; i < executeModules.length; i++) {
-/******/ 				result = __webpack_require__(__webpack_require__.s = executeModules[i]);
-/******/ 			}
-/******/ 		}
-/******/ 		return result;
+
 /******/ 	};
 
 /******/ 	// The module cache
@@ -32,7 +27,7 @@
 
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		5: 0
+/******/ 		6: 0
 /******/ 	};
 
 /******/ 	// The require function
@@ -142,12 +137,12 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 5:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -168,16 +163,16 @@
 
 //code splitting
 if (document.querySelectorAll('a').length) {
-    __webpack_require__.e/* require.ensure */(2).then((function () {
-        var Button = __webpack_require__(1).default;
+    Promise.all/* require.ensure */([__webpack_require__.e(4), __webpack_require__.e(0)]).then((function () {
+        var Button = __webpack_require__(0).default;
         var button = new Button('google.com');
         button.render('a');
     }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 }
 
 if (document.querySelectorAll('h1').length) {
-    __webpack_require__.e/* require.ensure */(0).then((function () {
-        var Header = __webpack_require__(3).default;
+    Promise.all/* require.ensure */([__webpack_require__.e(2), __webpack_require__.e(0)]).then((function () {
+        var Header = __webpack_require__(2).default;
         new Header().render('h1');
     }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 }

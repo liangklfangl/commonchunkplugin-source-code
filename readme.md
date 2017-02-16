@@ -452,6 +452,7 @@ module.exports = Entrypoint;
   [length]: 1 ]
 
 //我们的chunk.js的入口文件是两个，分别为main和main1,通过调用两次(usedChunks有几个就是几次)commonChunk.addChunk来完成
+//insertChunk修改了entryPoint的chunk，也同时修改了commonChunk的entrypoint
 ------------->beforechunk [ Entrypoint {
     name: 'main',
     chunks: 
@@ -1153,7 +1154,7 @@ Chunk {
  module.exports = {
      entry: {
          main: process.cwd()+'/example3/main.js',
-        main1: process.cwd()+'/example3/main1.js',
+         main1: process.cwd()+'/example3/main1.js',
          common1:["jquery"],
          common2:["vue"]
      },
@@ -1354,7 +1355,8 @@ Chunk {
 /******/      function getModuleExports() { return module; };
 /******/    __webpack_require__.d(getter, 'a', getter);
 /******/    return getter;
-/******/  };
+/******/
+  };
 
 /******/  // Object.prototype.hasOwnProperty.call
 /******/  __webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
@@ -1369,9 +1371,96 @@ Chunk {
 /******/ ([]);
 ```
 
+当然，我们也可以运行当前目录下的例子，修改webpack配置为：
+
+```js
+ new webpack.optimize.CommonsChunkPlugin({
+                filename:'[name].bundle.js',
+                name:      ['main','main1'], // Move dependencies to our main file
+                minChunks: 2, // How many times a dependency must come up before being extracted
+            }),
+```
+
+此时可视化后的结果将是如下：
+
+![](./8.png)
+
+注意看initial和entry,比如我们的main1,main都是initital，但是只有main1是entry类型(虽然按照上面的分析，这里的name集合和entry配置的都是完全一样，因为entry也是main和main1，但是你会发现我们的main1和main还是要通过commonchunkplugin进行一次抽取，所以导致最后的runtime部分被抽取的到main1.bundle.js中，这也是为什么我们要先加载main1.bundle.js的原因);而且，通过这个可视化结果的parents部分你也能清晰的看到每一个chunk之间的父子关系。注意：如果无法打开stats.json可以打开该文件看看是否有你自己打印的console.log内容。
 
 
+### 4.当配置async的时候处理
 
+#### 4.1 首先我们修改webpack配置为不含有aync的配置：
+
+```js
+    new webpack.optimize.CommonsChunkPlugin({
+            name:      'main', // Move dependencies to our main file
+            minChunks: 2, // How many times a dependency must come up before being extracted
+        }),
+```
+
+我们可视化后会得到如下的chunk关系图：
+
+![](./9.png)
+
+
+通过上面的分析是清理之中的，最后会导致main1中的公共代码抽取到main这个chunk中，包括runtime，所以main这个chunk必须要提前加载。
+
+#### 4.2 我们修改webpack配置为含有aync的配置：
+
+webpack配置为：
+
+```js
+   new webpack.optimize.CommonsChunkPlugin({
+            async: true,
+            name:      'main', // Move dependencies to our main file
+            minChunks: 2, // How many times a dependency must come up before being extracted
+        }),
+```
+
+首先文件的输出为：
+
+![](./10.png)
+
+也就是说，这种添加async配置后的chunk输出要比没有添加async多了一个文件。我们来查看一下可视化的结果：
+
+![](./11.png)
+
+通过上图，我们其是是添加了一个新的chunk，该chunk是CommonsChunkPlugin的name指定的这个chunk的子级chunk！
+
+我们继续修改webpack的配置如下：
+
+```js
+ new webpack.optimize.CommonsChunkPlugin({
+            async: true,
+            name:     ['main','main1'], // Move dependencies to our main file
+            minChunks: 2, // How many times a dependency must come up before being extracted
+        }),
+```
+
+此时你会发现可视化结果如下：
+
+![](./12.png)
+
+也就是对于name指定的这个数组中每一个common chunk都会添加一个公有的子级chunk!
+
+注意：上面的两种情况下,main和main1这两个chunk都是initial，也是entry chunk，此时commonChunkPlugin不再是抽取两个chunk的公有代码，而是创建一个新的子级chunk，该子级chunk和其他的子级chunk同时加载！
+
+#### 4.3 我们看看commonChunkPlugin中内部的处理
+
+首先是选择commonChunks集合：
+
+```js
+chunkNames = options.name || options.names;
+selectedChunks = options.chunks;
+if(options.children) selectedChunks = false;
+//如果你没有指定chunk名称，同时指定了children，那么表示抽取所有的chunk中满足使用次数的chunk
+if(!chunkNames && (selectedChunks === false || asyncOption)) {
+          commonChunks = chunks;
+        }
+```
+
+如果你没指定commonChunkplugin中的name，也就是公共chunk的名称（上面的例子表明name的指定用于表示为那个父级chunk添加一个子级asyncChunk）,那么为所有的chunks都添加这个asyncChunk。
 
 
 

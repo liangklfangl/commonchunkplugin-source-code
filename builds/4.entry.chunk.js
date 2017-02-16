@@ -1,6 +1,6 @@
-webpackJsonp([3],{
+webpackJsonp([4],{
 
-/***/ 1:
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,14 +30,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Button1 = function () {
-    function Button1(link) {
-        _classCallCheck(this, Button1);
+var Button = function () {
+    function Button(link) {
+        _classCallCheck(this, Button);
 
         this.link = link;
     }
 
-    _createClass(Button1, [{
+    _createClass(Button, [{
         key: 'onClick',
         value: function onClick(event) {
             event.preventDefault();
@@ -56,10 +56,10 @@ var Button1 = function () {
         }
     }]);
 
-    return Button1;
+    return Button;
 }();
 
-exports.default = Button1;
+exports.default = Button;
 
 /***/ }),
 
