@@ -1457,10 +1457,135 @@ if(options.children) selectedChunks = false;
 //如果你没有指定chunk名称，同时指定了children，那么表示抽取所有的chunk中满足使用次数的chunk
 if(!chunkNames && (selectedChunks === false || asyncOption)) {
           commonChunks = chunks;
-        }
+    }
 ```
 
 如果你没指定commonChunkplugin中的name，也就是公共chunk的名称（上面的例子表明name的指定用于表示为那个父级chunk添加一个子级asyncChunk）,那么为所有的chunks都添加这个asyncChunk。
+
+下面是选择抽取哪些chunk，用来获取其中的公有的模块：
+
+```js
+     //用于code splitting的情况下获取commonChunk.chunks的子级chunk
+     else if(selectedChunks === false || asyncOption) {
+            usedChunks = (commonChunk.chunks || []).filter((chunk) => {
+              // we can only move modules from this chunk if the "commonChunk" is the only parent
+              return asyncOption || chunk.parents.length === 1;
+            });
+        }
+```
+
+如果配置了异步，那么还是对单个入口文件的子级chunk进行遍历，获取当前这个common chunk的所有的子级chunk，如main.js中所有通过require.ensure产生的子级chunk,得到的结果表示该common chunk使用的所有的usedChunks。
+
+下面开始创建我们的asyncchunk:
+
+```js
+   let asyncChunk;
+          if(asyncOption) {
+            asyncChunk = compilation.addChunk(typeof asyncOption === "string" ? asyncOption : undefined);
+            asyncChunk.chunkReason = "async commons chunk";
+            asyncChunk.extraAsync = true;
+            asyncChunk.addParent(commonChunk);
+            commonChunk.addChunk(asyncChunk);
+            commonChunk = asyncChunk;
+            //每次循环common chunk都更新commonChunk为新创建的asyncChunk
+          }
+```
+
+每次遍历一个commonChunk都是会新创建一个全新的asyncChunk，然后这个asyncChunk作为commonChunk的子级chunk。
+
+
+接着抽取usedChunks，usedChunks指的是该main.js通过require.ensure产生的所有的子级chunk集合：
+
+```js
+if(minChunks !== Infinity) {
+            const commonModulesCount = [];
+            const commonModules = [];
+            usedChunks.forEach((chunk) => {
+              chunk.modules.forEach((module) => {
+                const idx = commonModules.indexOf(module);
+                if(idx < 0) {
+                  commonModules.push(module);
+                  commonModulesCount.push(1);
+                } else {
+                  commonModulesCount[idx]++;
+                }
+              });
+            });
+            const _minChunks = (minChunks || Math.max(2, usedChunks.length));
+            commonModulesCount.forEach((count, idx) => {
+              const module = commonModules[idx];
+              if(typeof minChunks === "function") {
+                if(!minChunks(module, count))
+                  return;
+              } else if(count < _minChunks) {
+                return;
+              }
+              if(module.chunkCondition && !module.chunkCondition(commonChunk))
+                return;
+              reallyUsedModules.push(module);
+            });
+          }
+```
+
+
+#### 4.4 commonChunkPlugin牵涉到的其他内容
+
+
+##### 4.4.1 判断一个chunk是否是initial chunk:
+
+```js
+isInitial() {
+    return this.entrypoints.length > 0;
+  }
+```
+
+因为webpack会把require.ensure内容进行单独打包，所以对于它来说是不存在我们的entrypoints的，所以其不是initial chunk，但是包含require.ensure的main却是我们的intial chunk!而且commonchunkplugin是可以产生initial chunk的,因为common chunk会被添加entrypoint：
+
+```js
+    usedChunks.forEach((chunk) => {
+              chunk.parents = [commonChunk];
+              //common chunk会变成initial chunk，因为common chunk会添加entrypoint
+              chunk.entrypoints.forEach((ep) => {
+                ep.insertChunk(commonChunk, chunk);
+              });
+              commonChunk.addChunk(chunk);
+            });
+```
+
+
+##### 4.4.2 判断一个chunk是否具有runtime
+
+```js
+ hasRuntime() {
+    if(this.entrypoints.length === 0) return false;
+    //必须是initial chunk，commonchunkplugin会抽取出来entrypoint（上面例子）
+    return this.entrypoints[0].chunks[0] === this;
+  }
+```
+
+情况1:如果我们没有加入commonchunkplugin，那么很显然我们的main和main1两个都是有runtime的，因为chunk.entrypoints表示该chunk来自于哪些入口点，而main这个chunk只有一个入口点。而entrypoint.chunks表示该入口文件产生了哪些chunks，那么很显然第一个chunk就是当前chunk本身！
+
+情况2:如果加入commonchunkplugin，那么含有runtime的必须是最高级的common chunk。设想只有main,main1,common的情况，其中main,main1的公共代码抽取到common中,此时对于common来说，其entrypoints[0]就是main这个入口，而这个入口产生的第一个chunk就是common这个chunk(因为我们的commonchunkplugin采用的是把commonchunk插入到当前chunk之前)
+
+```js
+   usedChunks.forEach((chunk) => {
+              chunk.parents = [commonChunk];
+              chunk.entrypoints.forEach((ep) => {
+                ep.insertChunk(commonChunk, chunk);
+                //common chunk在chunk之前
+              });
+              commonChunk.addChunk(chunk);
+            });
+```
+
+
+
+我们看参照下图来分析：
+
+![](./5.png)
+
+
+
 
 
 

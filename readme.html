@@ -1,0 +1,2492 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>readme</title></head><body><article class="markdown-body"><h3 id="1commonchunkplugin"><a name="user-content-1commonchunkplugin" href="#1commonchunkplugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.不添加commonchunkplugin打包的文件</h3>
+<p>我们的webpack配置如下：</p>
+<pre><code class="js"> var webpack = require('webpack');
+
+module.exports = {
+    entry:  {
+         main:'./src/index.js',
+         main1:'./src/index1.js'
+    },
+    output: {
+        path:     'builds',
+        filename: &quot;[name].entry.chunk.js&quot;,
+        publicPath: 'builds/',
+    },
+    plugins: [
+
+    ],
+    module: {
+         loaders: [
+         {
+            test: /\.js$/,
+             enforce: &quot;pre&quot;,
+             loader: &quot;eslint-loader&quot;
+          },
+           {
+                test:    /\.js/,
+                loader:  'babel-loader',
+                include: __dirname + '/src',
+            },
+            {
+                test:   /\.scss/,
+                loader: 'style-loader!css-loader!sass-loader',
+                // Or
+               // loaders: ['style', 'css', 'sass'],
+               //这里必须是loader后缀
+            },
+            {
+                test:   /\.html/,
+                loader: 'html-loader',
+            }
+        ],
+    }
+};
+</code></pre>
+
+<p>此时我们在build目录下生成如下的六个文件：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/1.png" /></p>
+<p>此时main和main1表示的都是入口文件打包的结果，而我们的其他文件都是通过require.ensure打包而成的。</p>
+<h3 id="2commonchunkplugin"><a name="user-content-2commonchunkplugin" href="#2commonchunkplugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.添加commonchunkplugin打包的文件</h3>
+<p>更新webpack如下：</p>
+<pre><code class="js">var webpack = require('webpack');
+
+module.exports = {
+    entry:  {
+         main:'./src/index.js',
+         main1:'./src/index1.js'
+    },
+    output: {
+        path:     'builds',
+        // filename: '[chunkhash].output.js',
+        filename: &quot;[name].entry.chunk.js&quot;,
+        publicPath: 'builds/',
+    },
+    plugins: [
+         new webpack.optimize.CommonsChunkPlugin({
+                // async: true,
+                filename:'[name].bundle.js',
+                children:true,
+               //对main和main1的文件单独打包，main的chunks集合包含了两个文件，也就是require.ensure后的两个文件
+                name:      ['main','main1'], // Move dependencies to our main file
+                minChunks: 2, // How many times a dependency must come up before being extracted
+            }),
+
+    ],
+    module: {
+         loaders: [
+         {
+            test: /\.js$/,
+             enforce: &quot;pre&quot;,
+             loader: &quot;eslint-loader&quot;
+          },
+           {
+                test:    /\.js/,
+                loader:  'babel-loader',
+                include: __dirname + '/src',
+            },
+            {
+                test:   /\.scss/,
+                loader: 'style-loader!css-loader!sass-loader',
+                // Or
+               // loaders: ['style', 'css', 'sass'],
+               //这里必须是loader后缀
+            },
+            {
+                test:   /\.html/,
+                loader: 'html-loader',
+            }
+        ],
+    }
+};
+</code></pre>
+
+<p>此时打包的结果为如下：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/2.png" /></p>
+<p>其中 name:[&lsquo;main&rsquo;,&rsquo;main1&rsquo;]的配置表示，我们的main和main1这两个chunk(entry中配置)对应的子chunk中公有的模块会被打包到一起，也就是打包到main.entry.chunk.js和main1.entry.chunk.js中，但是输出文件不再是main.entry.chunk.js和main1.entry.chunk.js，而是filename:&rsquo;[name].bundle.js&rsquo;，也就是最后生成的main.bundle.js和main1.bundle.js。</p>
+<h3 id="3childrenchunks"><a name="user-content-3childrenchunks" href="#3childrenchunks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.当配置children后我们抽取公共模块的chunks集合</h3>
+<p>这时候在插件commonChunkPlugin中的抽取公共chunk的代码:</p>
+<pre><code class="js">     commonChunks.forEach(function processCommonChunk(commonChunk, idx) {
+                    let usedChunks;
+                    if(Array.isArray(selectedChunks)) {
+                        usedChunks = chunks.filter(chunk =&gt; chunk !== commonChunk &amp;&amp; selectedChunks.indexOf(chunk.name) &gt;= 0);
+                    } else if(selectedChunks === false || asyncOption) {
+                        usedChunks = (commonChunk.chunks || []).filter((chunk) =&gt; {
+                            // we can only move modules from this chunk if the &quot;commonChunk&quot; is the only parent
+                            return asyncOption || chunk.parents.length === 1;
+                        });
+
+                     //(1)
+                     var util = require('util'); 
+                    console.log('-------------&gt;commonChunk',util.inspect(commonChunk, {showHidden:true,depth:4})); 
+                    //如果name=［'main','main1'］那么表示以入口文件开始单独打包，此时的commonChunk就是我们的main.js和main1.js
+                    //其chunks属性表示所有require.ensure的产生的chunk
+                    } else {
+                        if(commonChunk.parents.length &gt; 0) {
+                            compilation.errors.push(new Error(&quot;CommonsChunkPlugin: While running in normal mode it's not allowed to use a non-entry chunk (&quot; + commonChunk.name + &quot;)&quot;));
+                            return;
+                        }
+                        //如果found&gt;=idx表示该chunk后续会作为一个独立的chunk来处理(独立打包)，所以此处不做修改
+                        //这里的chunks集合是包括所有entry中配置的和在name数组中配置的，如果entry中不存在这个chunk而name中存在，直接创建一个空的chunk！
+                        usedChunks = chunks.filter((chunk) =&gt; {
+                            const found = commonChunks.indexOf(chunk);
+                            if(found &gt;= idx) return false;
+                            return chunk.hasRuntime();
+                        });
+                    }
+                    let asyncChunk;
+                    if(asyncOption) {
+                        asyncChunk = compilation.addChunk(typeof asyncOption === &quot;string&quot; ? asyncOption : undefined);
+                        asyncChunk.chunkReason = &quot;async commons chunk&quot;;
+                        asyncChunk.extraAsync = true;
+                        asyncChunk.addParent(commonChunk);
+                        commonChunk.addChunk(asyncChunk);
+                        commonChunk = asyncChunk;
+                    }
+                    const reallyUsedModules = [];
+                    if(minChunks !== Infinity) {
+                        const commonModulesCount = [];
+                        const commonModules = [];
+                        usedChunks.forEach((chunk) =&gt; {
+                            chunk.modules.forEach((module) =&gt; {
+                                const idx = commonModules.indexOf(module);
+                                if(idx &lt; 0) {
+                                    commonModules.push(module);
+                                    commonModulesCount.push(1);
+                                } else {
+                                    commonModulesCount[idx]++;
+                                }
+                            });
+                        });
+                        const _minChunks = (minChunks || Math.max(2, usedChunks.length));
+                        commonModulesCount.forEach((count, idx) =&gt; {
+                            const module = commonModules[idx];
+                            if(typeof minChunks === &quot;function&quot;) {
+                                if(!minChunks(module, count))
+                                    return;
+                            } else if(count &lt; _minChunks) {
+                                return;
+                            }
+                            if(module.chunkCondition &amp;&amp; !module.chunkCondition(commonChunk))
+                                return;
+                            reallyUsedModules.push(module);
+                        });
+                    }
+                    if(minSize) {
+                        const size = reallyUsedModules.reduce((a, b) =&gt; {
+                            return a + b.size();
+                        }, 0);
+                        if(size &lt; minSize)
+                            return;
+                    }
+                    const reallyUsedChunks = new Set();
+                    reallyUsedModules.forEach((module) =&gt; {
+                        usedChunks.forEach((chunk) =&gt; {
+                            if(module.removeChunk(chunk)) {
+                                reallyUsedChunks.add(chunk);
+                            }
+                        });
+                        commonChunk.addModule(module);
+                        module.addChunk(commonChunk);
+                    });
+                    if(asyncOption) {
+                        for(const chunk of reallyUsedChunks) {
+                            if(chunk.isInitial()) continue;
+                            chunk.blocks.forEach((block) =&gt; {
+                                block.chunks.unshift(commonChunk);
+                                commonChunk.addBlock(block);
+                            });
+                        }
+                        asyncChunk.origins = Array.from(reallyUsedChunks).map((chunk) =&gt; {
+                            return chunk.origins.map((origin) =&gt; {
+                                const newOrigin = Object.create(origin);
+                                newOrigin.reasons = (origin.reasons || []).slice();
+                                newOrigin.reasons.push(&quot;async commons&quot;);
+                                return newOrigin;
+                            });
+                        }).reduce((arr, a) =&gt; {
+                            arr.push.apply(arr, a);
+                            return arr;
+                        }, []);
+                    } else {
+                        usedChunks.forEach((chunk) =&gt; {
+                            chunk.parents = [commonChunk];
+                            chunk.entrypoints.forEach((ep) =&gt; {
+                                ep.insertChunk(commonChunk, chunk);
+                            });
+                            commonChunk.addChunk(chunk);
+                        });
+                    }
+                    if(filenameTemplate)
+                        commonChunk.filenameTemplate = filenameTemplate;
+                });
+</code></pre>
+
+<p>我们看看其中的chunk.hasRuntime函数：</p>
+<pre><code class="js">hasRuntime() {
+    if(this.entrypoints.length === 0) return false;
+    return this.entrypoints[0].chunks[0] === this;
+  }
+</code></pre>
+
+<p>我们看看chunk.entrypoints内部表示(见data.js下名字为main的chunk)：</p>
+<pre><code class="js"> entrypoints: 
+   [ Entrypoint { name: 'main', chunks: [ [Circular], [length]: 1 ] },
+     [length]: 1 ]
+</code></pre>
+
+<p>所以只有顶级chunk才会有执行环境。我们顺便看看在commonchunkplugin的处理方式：</p>
+<pre><code class="js">   //usedChunks是已经抽取了公共模块的chunk
+   usedChunks.forEach(function(chunk) {
+            chunk.parents = [commonChunk];
+            chunk.entrypoints.forEach(function(ep) {
+              ep.insertChunk(commonChunk, chunk);
+              //在每一个移除了公共代码的chunk之前插入commonChunk
+            });
+            //每一个移除了公共chunk的chunk.entrypoints添加一个chunk
+            commonChunk.addChunk(chunk);
+          });
+</code></pre>
+
+<p>我们顺便也给出EntryPoint的代码：</p>
+<pre><code class="js">class Entrypoint {
+  constructor(name) {
+    this.name = name;
+    this.chunks = [];
+  }
+  unshiftChunk(chunk) {
+    this.chunks.unshift(chunk);
+    chunk.entrypoints.push(this);
+  }
+  insertChunk(chunk, before) {
+    const idx = this.chunks.indexOf(before);
+    if(idx &gt;= 0) {
+      this.chunks.splice(idx, 0, chunk);
+    } else {
+      throw new Error(&quot;before chunk not found&quot;);
+    }
+    chunk.entrypoints.push(this);
+  }
+  getFiles() {
+    let files = [];
+    for(let chunkIdx = 0; chunkIdx &lt; this.chunks.length; chunkIdx++) {
+      for(let fileIdx = 0; fileIdx &lt; this.chunks[chunkIdx].files.length; fileIdx++) {
+        if(files.indexOf(this.chunks[chunkIdx].files[fileIdx]) === -1) {
+          files.push(this.chunks[chunkIdx].files[fileIdx]);
+        }
+      }
+    }
+
+    return files;
+  }
+}
+module.exports = Entrypoint;
+
+</code></pre>
+
+<p>我们把上面的那几句代码添加注释来看看具体的打印内容：</p>
+<pre><code class="js">   usedChunks.forEach(function(chunk,index) {
+           var util = require('util'); 
+               console.log('-------------&gt;before'+chunk.name,util.inspect(chunk.entrypoints, {showHidden:true,depth:2})); 
+            chunk.parents = [commonChunk];
+            chunk.entrypoints.forEach(function(ep) {
+              ep.insertChunk(commonChunk, chunk);
+            });
+              var util = require('util'); 
+          console.log('-------------&gt;end'+chunk.name,util.inspect(chunk.entrypoints, {showHidden:true,depth:2})); 
+            commonChunk.addChunk(chunk);
+          });
+</code></pre>
+
+<p>其中webpack中name的配置为 name: [&ldquo;chunk&rdquo;,&rsquo;common1&rsquo;,&rsquo;common2&rsquo;]。下面是控制台打印结果：</p>
+<pre>
+ ------------->beforemain [ Entrypoint {
+    name: 'main',
+    //一开始我们的main这个chunk.entrypoints集合中只有一个Entrypoint对象，其为"main"
+    //表示我们的chunk来自于那个入口文件
+    chunks: 
+    //Entrypoint的chunks集合表示这个Entrypoint产生了哪些chunks
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1000,
+         name: 'main',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 1 ] },
+  [length]: 1 ]
+------------->endmain [ Entrypoint {
+    name: 'main',
+    chunks: 
+     [ Chunk {
+       //这个chunk对应的入口文件产生了name为‘chunk’的chunk
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1000,
+         name: 'main',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 2 ] },
+  [length]: 1 ]
+  //main1和main同样的道理
+------------->beforemain1 [ Entrypoint {
+    name: 'main1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1001,
+         name: 'main1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 1 ] },
+  [length]: 1 ]
+------------->endmain1 [ Entrypoint {
+    name: 'main1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1001,
+         name: 'main1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 2 ] },
+  [length]: 1 ]
+
+//我们的chunk.js的入口文件是两个，分别为main和main1,通过调用两次(usedChunks有几个就是几次)commonChunk.addChunk来完成
+//insertChunk修改了entryPoint的chunk，也同时修改了commonChunk的entrypoint
+------------->beforechunk [ Entrypoint {
+    name: 'main',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1000,
+         name: 'main',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 2 ] },
+  Entrypoint {
+    name: 'main1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1001,
+         name: 'main1',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 2 ] },
+  [length]: 2 ]
+------------->endchunk [ Entrypoint {
+    name: 'main',
+    chunks: 
+    //调用后每一个Entrypoint的chunks集合中都多了一个common1，因为其是commonchunk
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1000,
+         name: 'main',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 3 ] },
+  Entrypoint {
+    name: 'main1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1001,
+         name: 'main1',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 3 ] },
+  [length]: 2 ]
+  //入口文件来自于common1
+------------->beforecommon1 [ Entrypoint {
+    name: 'common1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 1 ] },
+  Entrypoint {
+    name: 'main',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1000,
+         name: 'main',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 3 ] },
+  Entrypoint {
+    name: 'main1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1001,
+         name: 'main1',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 3 ] },
+  [length]: 3 ]
+------------->endcommon1 [ Entrypoint {
+    name: 'common1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1003,
+         name: 'common2',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 2 ] },
+  Entrypoint {
+    name: 'main',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1003,
+         name: 'common2',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1000,
+         name: 'main',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 4 ] },
+  Entrypoint {
+    name: 'main1',
+    chunks: 
+     [ Chunk {
+         id: null,
+         ids: null,
+         debugId: 1003,
+         name: 'common2',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1002,
+         name: 'common1',
+         modules: [Object],
+         entrypoints: [Circular],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1004,
+         name: 'chunk',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object] },
+       Chunk {
+         id: null,
+         ids: null,
+         debugId: 1001,
+         name: 'main1',
+         modules: [Object],
+         entrypoints: [Object],
+         chunks: [Object],
+         parents: [Object],
+         blocks: [Object],
+         origins: [Object],
+         files: [Object],
+         rendered: false,
+         _removeAndDo: [Object],
+         addChunk: [Object],
+         addParent: [Object],
+         entryModule: [Object] },
+       [length]: 4 ] },
+  [length]: 3 ]
+
+</pre>
+
+<p>所以，每一个Entrypoint.chunks表示这个Entrypoint产生了多少个chunks!chunk.entrypoints表示该chunk来自于哪些Entrypoint！从而形成一个网状结构！</p>
+<h4 id="31-commonchunkpluginchunk"><a name="user-content-31-commonchunkpluginchunk" href="#31-commonchunkpluginchunk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.1 commonChunkPlugin抽取之前的chunk</h4>
+<p>在(1)处，仅仅表示我们自己的main或者main1这个chunk的基本信息，包括modules等，还没有经过commonChunkPlugin进行抽取，具体内容参见data.js。</p>
+<p>其中chunk的内部结构如下：</p>
+<pre><code class="js">Chunk {
+  id: null,
+  ids: null,
+  debugId: 1000,
+  name: 'main',
+  //chunk对应的name
+  modules: [],
+  //该chunk来自于哪些module,main这个chunk来自于src/index.js,该module包含两个RequireEnsureDependenciesBlock
+  entrypoints: 
+   [ Entrypoint { name: 'main', chunks: [ [Circular], [length]: 1 ] },
+     [length]: 1 ],
+  //入口文件为main:'./src/index.js',而entryPoint对应的chunk为对当前chunk的循环引用
+ chunks:[],//当前chunk的子级chunks有哪些，如require.ensure都是当前chunk的子级chunk
+ parents: [ [length]: 0 ],
+ //当前chunk的父级chunk集合，没有经过commonChunkPlugin处理main是顶级chunk
+ blocks: [ [length]: 0 ],
+ //module.blocks表示模块包含的块RequireEnsureDependenciesBlock等的个数，chunk.block表示当前chunk包含的block的个数
+ origins: 
+ //当前chunk从哪些模块得到
+   [ { module: 
+        NormalModule {
+          dependencies: [ [Object], [length]: 1 ],
+          blocks: [ [Object], [Object], [length]: 2 ],
+          variables: [ [length]: 0 ],
+          context: '/Users/klfang/Desktop/webpack-chunkfilename/src',
+          reasons: [ [length]: 0 ],
+          debugId: 1000,
+          lastId: null,
+          id: null,
+          portableId: null,
+          index: 0,
+          index2: 12,
+          depth: 0,
+          used: true,
+          usedExports: true,
+          providedExports: true,
+          chunks: [ [Circular], [length]: 1 ],
+          warnings: [ [Object], [length]: 1 ],
+          dependenciesWarnings: [ [length]: 0 ],
+          errors: [ [length]: 0 ],
+          dependenciesErrors: [ [length]: 0 ],
+          strict: true,
+          meta: {},
+          request: '/Users/klfang/Desktop/webpack-chunkfilename/node_modules/babel-loader/lib/index.js!/Users/klfang/Desktop/webpack-chunkfilename/node_modules/eslint-loader/index.js!/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+          userRequest: '/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+          rawRequest: './src/index.js',
+          parser: 
+           Parser {
+             _plugins: [Object],
+             options: undefined,
+             scope: undefined,
+             state: undefined },
+          resource: '/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+          loaders: [ [Object], [Object], [length]: 2 ],
+          //module.fileDependencies: An array of source file paths included into a module. This includes the source JavaScript file itself (ex: index.js), and all dependency asset files (stylesheets, images, etc) that it has required. Reviewing dependencies is useful for seeing what source files belong to a module.
+          //这个module没有引入相应的css/html/image等
+          fileDependencies: 
+           [ '/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+             [length]: 1 ],
+          contextDependencies: [ [length]: 0 ],
+          error: null,
+          _source: 
+           OriginalSource {
+             _value: '\'use strict\';\n\n// var $ = require(\'jquery\');\n\n// $(\'body\').html(\'Hello\');\n\n\n// import $ from \'jquery\';\n// $(\'body\').html(\'Hello\');\n\n\n// import Button from \'./Components/Button\';\n// const button = new Button(\'google.com\');\n//  button.render(\'a\');\n\n//code splitting\nif (document.querySelectorAll(\'a\').length) {\n    require.ensure([], function () {\n        var Button = require(\'./Components/Button\').default;\n        var button = new Button(\'google.com\');\n        button.render(\'a\');\n    });\n}\n\nif (document.querySelectorAll(\'h1\').length) {\n    require.ensure([], function () {\n        var Header = require(\'./Components/Header\').default;\n        new Header().render(\'h1\');\n    });\n}',
+             _name: '/Users/klfang/Desktop/webpack-chunkfilename/node_modules/babel-loader/lib/index.js!/Users/klfang/Desktop/webpack-chunkfilename/node_modules/eslint-loader/index.js!/Users/klfang/Desktop/webpack-chunkfilename/src/index.js' },
+          assets: {},
+          built: true,
+          _cachedSource: null,
+          issuer: null,
+          building: undefined,
+          buildTimestamp: 1487137260364,
+          cacheable: true },
+       loc: undefined,
+       name: 'main' },
+     [length]: 1 ],
+  files: [ [length]: 0 ],
+  // An array of output filenames generated by the chunk. 
+  //You may access these asset sources from the compilation.assets table.
+  //表示这个chunk产生的输出文件，此处为顶级chunk没有输出文件产生
+  _removeAndDo:{},
+  addChunk:{},
+  addParent:{},
+  //入口模块
+  entryModule: 
+   NormalModule {
+     dependencies: 
+      [ ConstDependency {},
+        [length]: 1 ],
+     blocks: 
+      [ RequireEnsureDependenciesBlock {
+          dependencies: [ [Object], [Object], [Object], [length]: 3 ],
+          blocks: [ [length]: 0 ],
+          variables: [ [length]: 0 ],
+          chunkName: null,
+          chunks: [ [Object], [length]: 1 ],
+          module: [Circular],
+          loc: SourceLocation { start: [Object], end: [Object] },
+          expr: 
+           Node {
+             type: 'CallExpression',
+             start: 313,
+             end: 488,
+             loc: [Object],
+             range: [Object],
+             callee: [Object],
+             arguments: [Object] },
+          range: [ 345, 486, [length]: 2 ],
+          chunkNameRange: null,
+          parent: [Circular] },
+        RequireEnsureDependenciesBlock {
+          dependencies: [ [Object], [Object], [Object], [length]: 3 ],
+          blocks: [ [length]: 0 ],
+          variables: [ [length]: 0 ],
+          chunkName: null,
+          chunks: [ [Object], [length]: 1 ],
+          module: [Circular],
+          loc: SourceLocation { start: [Object], end: [Object] },
+          expr: 
+           Node {
+             type: 'CallExpression',
+             start: 543,
+             end: 678,
+             loc: [Object],
+             range: [Object],
+             callee: [Object],
+             arguments: [Object] },
+          range: [ 575, 676, [length]: 2 ],
+          chunkNameRange: null,
+          parent: [Circular] },
+        [length]: 2 ],
+     variables: [ [length]: 0 ],
+     context: '/Users/klfang/Desktop/webpack-chunkfilename/src',
+     reasons: [ [length]: 0 ],
+     debugId: 1000,
+     lastId: null,
+     id: null,
+     portableId: null,
+     index: 0,
+     index2: 12,
+     depth: 0,
+     used: true,
+     usedExports: true,
+     providedExports: true,
+     chunks: [ [Circular], [length]: 1 ],
+     warnings: [],
+     dependenciesWarnings: [ [length]: 0 ],
+     errors: [ [length]: 0 ],
+     dependenciesErrors: [ [length]: 0 ],
+     strict: true,
+     meta: {},
+     request: '/Users/klfang/Desktop/webpack-chunkfilename/node_modules/babel-loader/lib/index.js!/Users/klfang/Desktop/webpack-chunkfilename/node_modules/eslint-loader/index.js!/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+     userRequest: '/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+     rawRequest: './src/index.js',
+     parser: 
+      Parser {
+        _plugins: {},
+        options: undefined,
+        scope: undefined,
+        state: undefined },
+     resource: '/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+     loaders: 
+      [ { loader: '/Users/klfang/Desktop/webpack-chunkfilename/node_modules/babel-loader/lib/index.js' },
+        { loader: '/Users/klfang/Desktop/webpack-chunkfilename/node_modules/eslint-loader/index.js' },
+        [length]: 2 ],
+     fileDependencies: 
+      [ '/Users/klfang/Desktop/webpack-chunkfilename/src/index.js',
+        [length]: 1 ],
+     contextDependencies: [ [length]: 0 ],
+     error: null,
+     _source: 
+      OriginalSource {
+        _value: '\'use strict\';\n\n// var $ = require(\'jquery\');\n\n// $(\'body\').html(\'Hello\');\n\n\n// import $ from \'jquery\';\n// $(\'body\').html(\'Hello\');\n\n\n// import Button from \'./Components/Button\';\n// const button = new Button(\'google.com\');\n//  button.render(\'a\');\n\n//code splitting\nif (document.querySelectorAll(\'a\').length) {\n    require.ensure([], function () {\n        var Button = require(\'./Components/Button\').default;\n        var button = new Button(\'google.com\');\n        button.render(\'a\');\n    });\n}\n\nif (document.querySelectorAll(\'h1\').length) {\n    require.ensure([], function () {\n        var Header = require(\'./Components/Header\').default;\n        new Header().render(\'h1\');\n    });\n}',
+        _name: '/Users/klfang/Desktop/webpack-chunkfilename/node_modules/babel-loader/lib/index.js!/Users/klfang/Desktop/webpack-chunkfilename/node_modules/eslint-loader/index.js!/Users/klfang/Desktop/webpack-chunkfilename/src/index.js' },
+     assets: {},
+     built: true,
+     _cachedSource: null,
+     issuer: null,
+     building: undefined,
+     buildTimestamp: 1487137260364,
+     cacheable: true } }
+}
+</code></pre>
+
+<h4 id="32-commonchunkplugin"><a name="user-content-32-commonchunkplugin" href="#32-commonchunkplugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.2 commonChunkPlugin抽取公共代码抽取可视化分析</h4>
+<p>运行<a href="https://github.com/liangklfangl/commonsChunkPlugin_Config/tree/master/example3">commonsChunkPlugin_Config</a>中的example3代码,其中webpack的配置如下：</p>
+<pre><code class="js"> var CommonsChunkPlugin = require(&quot;webpack/lib/optimize/CommonsChunkPlugin&quot;);
+ module.exports = {
+     entry: {
+         main: process.cwd()+'/example3/main.js',
+         main1: process.cwd()+'/example3/main1.js',
+         common1:[&quot;jquery&quot;],
+         common2:[&quot;vue&quot;]
+     },
+     output: {
+         path: process.cwd()+'/dest/example3',
+         filename: '[name].js'
+    },
+     plugins: [
+         new CommonsChunkPlugin({
+             name: [&quot;chunk&quot;,'common1','common2'],
+             minChunks:2
+         })
+     ]
+ };
+</code></pre>
+
+<p>我们看看commonchunkplugin中的处理方式(else部分)：</p>
+<pre><code class="js">    if(Array.isArray(selectedChunks)) {
+          usedChunks = chunks.filter(function(chunk) {
+            if(chunk === commonChunk) return false;
+            //此时commonChunk的内容是已经存在于最终的文件中了，如果它不是手动创建的chunk
+            //去掉下例的jquery,得到usedChunks集合
+            return selectedChunks.indexOf(chunk.name) &gt;= 0;
+          });
+        } else if(selectedChunks === false || asyncOption) {
+          usedChunks = (commonChunk.chunks || []).filter(function(chunk) {
+            // we can only move modules from this chunk if the &quot;commonChunk&quot; is the only parent
+            //只是把一级子chunk的公共内容提取出来，如果有一个子chunk的父级chunk有两个那么不会被提取出来。
+            return asyncOption || chunk.parents.length === 1;
+          });
+        } else {
+          //如果当前的这个chunk有多个父级chunk，那么不会提取的
+          if(commonChunk.parents.length &gt; 0) {
+            compilation.errors.push(new Error(&quot;CommonsChunkPlugin: While running in normal mode it's not allowed to use a non-entry chunk (&quot; + commonChunk.name + &quot;)&quot;));
+            return;
+          }
+          usedChunks = chunks.filter(function(chunk) {
+            var found = commonChunks.indexOf(chunk);
+            if(found &gt;= idx) return false;
+            return chunk.hasRuntime();
+          });
+        }
+</code></pre>
+
+<p>如果你运行如下命令webpack &ndash;profile &ndash;json &gt; stats.json并按照<a href="https://github.com/liangklfangl/webpack-chunkfilename">本文</a>方式查看，你会发现其实可视化后各个chunk的关系是如下所示的：</p>
+<p><img alt="" src=".／5.png" /></p>
+<p>这样就很容易知道commonchunkplugin的处理方式了吧。</p>
+<p>其中有一点你要特别注意，就是如果吧webpack配置修改为如下:</p>
+<pre><code class="js">   new CommonsChunkPlugin({
+             name: [&quot;common1&quot;,'common2','chunk'],
+             minChunks:2
+         })
+</code></pre>
+
+<p>此时我们继续可视化会得到如下的结果：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/7.png" /></p>
+<p>所以通过修改name数组中的元素的顺序往往会得到不同的chunk关系！但是需要注意一点，那就是我们的runtime执行环境会被抽取到最上级的chunk中，这里就是chunk.js：</p>
+<pre><code class="js">/******/ (function(modules) { // webpackBootstrap
+/******/  // install a JSONP callback for chunk loading
+/******/  var parentJsonpFunction = window[&quot;webpackJsonp&quot;];
+/******/  window[&quot;webpackJsonp&quot;] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
+/******/    // add &quot;moreModules&quot; to the modules object,
+/******/    // then flag all &quot;chunkIds&quot; as loaded and fire callback
+/******/    var moduleId, chunkId, i = 0, resolves = [], result;
+/******/    for(;i &lt; chunkIds.length; i++) {
+/******/      chunkId = chunkIds[i];
+/******/      if(installedChunks[chunkId])
+/******/        resolves.push(installedChunks[chunkId][0]);
+/******/      installedChunks[chunkId] = 0;
+/******/    }
+/******/    for(moduleId in moreModules) {
+/******/      if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/        modules[moduleId] = moreModules[moduleId];
+/******/      }
+/******/    }
+/******/    if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
+/******/    while(resolves.length)
+/******/      resolves.shift()();
+/******/    if(executeModules) {
+/******/      for(i=0; i &lt; executeModules.length; i++) {
+/******/        result = __webpack_require__(__webpack_require__.s = executeModules[i]);
+/******/      }
+/******/    }
+/******/    return result;
+/******/  };
+
+/******/  // The module cache
+/******/  var installedModules = {};
+
+/******/  // objects to store loaded and loading chunks
+/******/  var installedChunks = {
+/******/    4: 0
+/******/  };
+
+/******/  // The require function
+/******/  function __webpack_require__(moduleId) {
+
+/******/    // Check if module is in cache
+/******/    if(installedModules[moduleId])
+/******/      return installedModules[moduleId].exports;
+
+/******/    // Create a new module (and put it into the cache)
+/******/    var module = installedModules[moduleId] = {
+/******/      i: moduleId,
+/******/      l: false,
+/******/      exports: {}
+/******/    };
+
+/******/    // Execute the module function
+/******/    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/    // Flag the module as loaded
+/******/    module.l = true;
+
+/******/    // Return the exports of the module
+/******/    return module.exports;
+/******/  }
+
+/******/  // This file contains only the entry chunk.
+/******/  // The chunk loading function for additional chunks
+/******/  __webpack_require__.e = function requireEnsure(chunkId) {
+/******/    if(installedChunks[chunkId] === 0)
+/******/      return Promise.resolve();
+
+/******/    // an Promise means &quot;currently loading&quot;.
+/******/    if(installedChunks[chunkId]) {
+/******/      return installedChunks[chunkId][2];
+/******/    }
+/******/    // start chunk loading
+/******/    var head = document.getElementsByTagName('head')[0];
+/******/    var script = document.createElement('script');
+/******/    script.type = 'text/javascript';
+/******/    script.charset = 'utf-8';
+/******/    script.async = true;
+/******/    script.timeout = 120000;
+
+/******/    if (__webpack_require__.nc) {
+/******/      script.setAttribute(&quot;nonce&quot;, __webpack_require__.nc);
+/******/    }
+/******/    script.src = __webpack_require__.p + &quot;&quot; + chunkId + &quot;.js&quot;;
+/******/    var timeout = setTimeout(onScriptComplete, 120000);
+/******/    script.onerror = script.onload = onScriptComplete;
+/******/    function onScriptComplete() {
+/******/      // avoid mem leaks in IE.
+/******/      script.onerror = script.onload = null;
+/******/      clearTimeout(timeout);
+/******/      var chunk = installedChunks[chunkId];
+/******/      if(chunk !== 0) {
+/******/        if(chunk) chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
+/******/        installedChunks[chunkId] = undefined;
+/******/      }
+/******/    };
+
+/******/    var promise = new Promise(function(resolve, reject) {
+/******/      installedChunks[chunkId] = [resolve, reject];
+/******/    });
+/******/    installedChunks[chunkId][2] = promise;
+
+/******/    head.appendChild(script);
+/******/    return promise;
+/******/  };
+
+/******/  // expose the modules object (__webpack_modules__)
+/******/  __webpack_require__.m = modules;
+
+/******/  // expose the module cache
+/******/  __webpack_require__.c = installedModules;
+
+/******/  // identity function for calling harmony imports with the correct context
+/******/  __webpack_require__.i = function(value) { return value; };
+
+/******/  // define getter function for harmony exports
+/******/  __webpack_require__.d = function(exports, name, getter) {
+/******/    if(!__webpack_require__.o(exports, name)) {
+/******/      Object.defineProperty(exports, name, {
+/******/        configurable: false,
+/******/        enumerable: true,
+/******/        get: getter
+/******/      });
+/******/    }
+/******/  };
+
+/******/  // getDefaultExport function for compatibility with non-harmony modules
+/******/  __webpack_require__.n = function(module) {
+/******/    var getter = module &amp;&amp; module.__esModule ?
+/******/      function getDefault() { return module['default']; } :
+/******/      function getModuleExports() { return module; };
+/******/    __webpack_require__.d(getter, 'a', getter);
+/******/    return getter;
+/******/
+  };
+
+/******/  // Object.prototype.hasOwnProperty.call
+/******/  __webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+/******/  // __webpack_public_path__
+/******/  __webpack_require__.p = &quot;&quot;;
+
+/******/  // on error function for async loading
+/******/  __webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ })
+/************************************************************************/
+/******/ ([]);
+</code></pre>
+
+<p>当然，我们也可以运行当前目录下的例子，修改webpack配置为：</p>
+<pre><code class="js"> new webpack.optimize.CommonsChunkPlugin({
+                filename:'[name].bundle.js',
+                name:      ['main','main1'], // Move dependencies to our main file
+                minChunks: 2, // How many times a dependency must come up before being extracted
+            }),
+</code></pre>
+
+<p>此时可视化后的结果将是如下：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/8.png" /></p>
+<p>注意看initial和entry,比如我们的main1,main都是initital，但是只有main1是entry类型(虽然按照上面的分析，这里的name集合和entry配置的都是完全一样，因为entry也是main和main1，但是你会发现我们的main1和main还是要通过commonchunkplugin进行一次抽取，所以导致最后的runtime部分被抽取的到main1.bundle.js中，这也是为什么我们要先加载main1.bundle.js的原因);而且，通过这个可视化结果的parents部分你也能清晰的看到每一个chunk之间的父子关系。注意：如果无法打开stats.json可以打开该文件看看是否有你自己打印的console.log内容。</p>
+<h3 id="4async"><a name="user-content-4async" href="#4async" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.当配置async的时候处理</h3>
+<h4 id="41-webpackaync"><a name="user-content-41-webpackaync" href="#41-webpackaync" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.1 首先我们修改webpack配置为不含有aync的配置：</h4>
+<pre><code class="js">    new webpack.optimize.CommonsChunkPlugin({
+            name:      'main', // Move dependencies to our main file
+            minChunks: 2, // How many times a dependency must come up before being extracted
+        }),
+</code></pre>
+
+<p>我们可视化后会得到如下的chunk关系图：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/9.png" /></p>
+<p>通过上面的分析是清理之中的，最后会导致main1中的公共代码抽取到main这个chunk中，包括runtime，所以main这个chunk必须要提前加载。</p>
+<h4 id="42-webpackaync"><a name="user-content-42-webpackaync" href="#42-webpackaync" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.2 我们修改webpack配置为含有aync的配置：</h4>
+<p>webpack配置为：</p>
+<pre><code class="js">   new webpack.optimize.CommonsChunkPlugin({
+            async: true,
+            name:      'main', // Move dependencies to our main file
+            minChunks: 2, // How many times a dependency must come up before being extracted
+        }),
+</code></pre>
+
+<p>首先文件的输出为：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/10.png" /></p>
+<p>也就是说，这种添加async配置后的chunk输出要比没有添加async多了一个文件。我们来查看一下可视化的结果：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/11.png" /></p>
+<p>通过上图，我们其是是添加了一个新的chunk，该chunk是CommonsChunkPlugin的name指定的这个chunk的子级chunk！</p>
+<p>我们继续修改webpack的配置如下：</p>
+<pre><code class="js"> new webpack.optimize.CommonsChunkPlugin({
+            async: true,
+            name:     ['main','main1'], // Move dependencies to our main file
+            minChunks: 2, // How many times a dependency must come up before being extracted
+        }),
+</code></pre>
+
+<p>此时你会发现可视化结果如下：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/12.png" /></p>
+<p>也就是对于name指定的这个数组中每一个common chunk都会添加一个公有的子级chunk!</p>
+<p>注意：上面的两种情况下,main和main1这两个chunk都是initial，也是entry chunk，此时commonChunkPlugin不再是抽取两个chunk的公有代码，而是创建一个新的子级chunk，该子级chunk和其他的子级chunk同时加载！</p>
+<h4 id="43-commonchunkplugin"><a name="user-content-43-commonchunkplugin" href="#43-commonchunkplugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.3 我们看看commonChunkPlugin中内部的处理</h4>
+<p>首先是选择commonChunks集合：</p>
+<pre><code class="js">chunkNames = options.name || options.names;
+selectedChunks = options.chunks;
+if(options.children) selectedChunks = false;
+//如果你没有指定chunk名称，同时指定了children，那么表示抽取所有的chunk中满足使用次数的chunk
+if(!chunkNames &amp;&amp; (selectedChunks === false || asyncOption)) {
+          commonChunks = chunks;
+    }
+</code></pre>
+
+<p>如果你没指定commonChunkplugin中的name，也就是公共chunk的名称（上面的例子表明name的指定用于表示为那个父级chunk添加一个子级asyncChunk）,那么为所有的chunks都添加这个asyncChunk。</p>
+<p>下面是选择抽取哪些chunk，用来获取其中的公有的模块：</p>
+<pre><code class="js">     //用于code splitting的情况下获取commonChunk.chunks的子级chunk
+     else if(selectedChunks === false || asyncOption) {
+            usedChunks = (commonChunk.chunks || []).filter((chunk) =&gt; {
+              // we can only move modules from this chunk if the &quot;commonChunk&quot; is the only parent
+              return asyncOption || chunk.parents.length === 1;
+            });
+        }
+</code></pre>
+
+<p>如果配置了异步，那么还是对单个入口文件的子级chunk进行遍历，获取当前这个common chunk的所有的子级chunk，如main.js中所有通过require.ensure产生的子级chunk,得到的结果表示该common chunk使用的所有的usedChunks。</p>
+<p>下面开始创建我们的asyncchunk:</p>
+<pre><code class="js">   let asyncChunk;
+          if(asyncOption) {
+            asyncChunk = compilation.addChunk(typeof asyncOption === &quot;string&quot; ? asyncOption : undefined);
+            asyncChunk.chunkReason = &quot;async commons chunk&quot;;
+            asyncChunk.extraAsync = true;
+            asyncChunk.addParent(commonChunk);
+            commonChunk.addChunk(asyncChunk);
+            commonChunk = asyncChunk;
+            //每次循环common chunk都更新commonChunk为新创建的asyncChunk
+          }
+</code></pre>
+
+<p>每次遍历一个commonChunk都是会新创建一个全新的asyncChunk，然后这个asyncChunk作为commonChunk的子级chunk。</p>
+<p>接着抽取usedChunks，usedChunks指的是该main.js通过require.ensure产生的所有的子级chunk集合：</p>
+<pre><code class="js">if(minChunks !== Infinity) {
+            const commonModulesCount = [];
+            const commonModules = [];
+            usedChunks.forEach((chunk) =&gt; {
+              chunk.modules.forEach((module) =&gt; {
+                const idx = commonModules.indexOf(module);
+                if(idx &lt; 0) {
+                  commonModules.push(module);
+                  commonModulesCount.push(1);
+                } else {
+                  commonModulesCount[idx]++;
+                }
+              });
+            });
+            const _minChunks = (minChunks || Math.max(2, usedChunks.length));
+            commonModulesCount.forEach((count, idx) =&gt; {
+              const module = commonModules[idx];
+              if(typeof minChunks === &quot;function&quot;) {
+                if(!minChunks(module, count))
+                  return;
+              } else if(count &lt; _minChunks) {
+                return;
+              }
+              if(module.chunkCondition &amp;&amp; !module.chunkCondition(commonChunk))
+                return;
+              reallyUsedModules.push(module);
+            });
+          }
+</code></pre>
+
+<h4 id="44-commonchunkplugin"><a name="user-content-44-commonchunkplugin" href="#44-commonchunkplugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.4 commonChunkPlugin牵涉到的其他内容</h4>
+<h5 id="441-chunkinitial-chunk"><a name="user-content-441-chunkinitial-chunk" href="#441-chunkinitial-chunk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.4.1 首先就是判断一个chunk是否是initial chunk:</h5>
+<pre><code class="js">isInitial() {
+    return this.entrypoints.length &gt; 0;
+  }
+</code></pre>
+
+<p>因为webpack会把require.ensure内容进行单独打包，所以对于它来说是不存在我们的entrypoints的，所以其不是initial chunk，但是包含require.ensure的main却是我们的intial chunk!而且commonchunkplugin是可以产生initial chunk的,因为common chunk会被添加entrypoint：</p>
+<pre><code class="js">    usedChunks.forEach((chunk) =&gt; {
+              chunk.parents = [commonChunk];
+              //common chunk会变成initial chunk，因为common chunk会添加entrypoint
+              chunk.entrypoints.forEach((ep) =&gt; {
+                ep.insertChunk(commonChunk, chunk);
+              });
+              commonChunk.addChunk(chunk);
+            });
+</code></pre>
+
+<p>你可以参见下面的图：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/5.png" /></p>
+<h5 id="442-chunkruntime"><a name="user-content-442-chunkruntime" href="#442-chunkruntime" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.4.2 首先就是判断一个chunk是否具有runtime</h5>
+<pre><code class="js"> hasRuntime() {
+    if(this.entrypoints.length === 0) return false;
+    //必须是initial chunk，commonchunkplugin会抽取出来entrypoint（上面例子）
+    return this.entrypoints[0].chunks[0] === this;
+  }
+</code></pre>
+
+<p>情况1:如果我们没有加入commonchunkplugin，那么很显然我们的main和main1两个都是有runtime的，因为chunk.entrypoints表示该chunk来自于哪些入口点，而main这个chunk只有一个入口点。而entrypoint.chunks表示该入口文件产生了哪些chunks，那么很显然第一个chunk就是当前chunk本身！</p>
+<p>情况2:如果加入commonchunkplugin，那么含有runtime的必须是最高级的common chunk。设想只有main,main1,common的情况，其中main,main1的公共代码抽取到common中,此时对于common来说，其entrypoints[0]就是main这个入口，而这个入口产生的第一个chunk就是common这个chun k</p>
+<p>我们看参照下图来分析：</p>
+<p><img alt="" src="/Users/klfang/Desktop/commonchunkplugin-source-code/5.png" /></p></article></body></html>
