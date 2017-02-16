@@ -1493,7 +1493,6 @@ if(!chunkNames && (selectedChunks === false || asyncOption)) {
 
 每次遍历一个commonChunk都是会新创建一个全新的asyncChunk，然后这个asyncChunk作为commonChunk的子级chunk。
 
-
 接着抽取usedChunks，usedChunks指的是该main.js通过require.ensure产生的所有的子级chunk集合：
 
 ```js
@@ -1526,6 +1525,53 @@ if(minChunks !== Infinity) {
             });
           }
 ```
+
+将usedChunk中的公共模块移除(例如require.ensure),得到的结果放在reallyUsedChunks中。同时将公共的module添加到commonChunk中。
+
+```js
+const reallyUsedChunks = new Set();
+          reallyUsedModules.forEach((module) => {
+            usedChunks.forEach((chunk) => {
+              if(module.removeChunk(chunk)) {
+                reallyUsedChunks.add(chunk);
+                //该chunk已经移除了公共的module了
+              }
+            });
+            commonChunk.addModule(module);
+            module.addChunk(commonChunk);
+            //互相引用
+          });
+```
+
+
+```js
+   if(asyncOption) {
+            for(const chunk of reallyUsedChunks) {
+              //抽取了公共模块得到的chunk进行遍历
+              if(chunk.isInitial()) continue;
+              //require.ensure产生的不是initial chunk
+              chunk.blocks.forEach((block) => {
+                block.chunks.unshift(commonChunk);
+                //block.chunks集合中存放的是我们要加载的chunk
+                commonChunk.addBlock(block);
+                //这个commonChunk也含有我们抽取掉了公共模块的哪些chunk的block
+              });
+            }
+            asyncChunk.origins = Array.from(reallyUsedChunks).map((chunk) => {
+              return chunk.origins.map((origin) => {
+                //更新reasons
+                const newOrigin = Object.create(origin);
+                newOrigin.reasons = (origin.reasons || []).slice();
+                newOrigin.reasons.push("async commons");
+                return newOrigin;
+              });
+            }).reduce((arr, a) => {
+              arr.push.apply(arr, a);
+              return arr;
+            }, []);
+          } 
+```
+
 
 
 #### 4.4 commonChunkPlugin牵涉到的其他内容
@@ -1560,6 +1606,7 @@ isInitial() {
     if(this.entrypoints.length === 0) return false;
     //必须是initial chunk，commonchunkplugin会抽取出来entrypoint（上面例子）
     return this.entrypoints[0].chunks[0] === this;
+    //如果main这个chunk已经被commonchunkplugin处理后，那么chunks[0]是common chunk了
   }
 ```
 
@@ -1568,23 +1615,17 @@ isInitial() {
 情况2:如果加入commonchunkplugin，那么含有runtime的必须是最高级的common chunk。设想只有main,main1,common的情况，其中main,main1的公共代码抽取到common中,此时对于common来说，其entrypoints[0]就是main这个入口，而这个入口产生的第一个chunk就是common这个chunk(因为我们的commonchunkplugin采用的是把commonchunk插入到当前chunk之前)
 
 ```js
-   usedChunks.forEach((chunk) => {
+      usedChunks.forEach((chunk) => {
               chunk.parents = [commonChunk];
               chunk.entrypoints.forEach((ep) => {
                 ep.insertChunk(commonChunk, chunk);
-                //common chunk在chunk之前
+                //在chunks集合中common chunk在chunk之前
               });
               commonChunk.addChunk(chunk);
             });
 ```
 
-
-
-我们看参照下图来分析：
-
-![](./5.png)
-
-
+注意：我们的require.ensure产生的chunk不是initial chunk(不含有entrypoint)，同时也是不含有runtime的！
 
 
 
