@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/liangklfangl/commonchunkplugin-source-code/issues"
   },
-  "homepage": "https://github.com/liangklfangl/commonchunkplugin-source-code#readme"
+  "homepage": "https://github.com/liangklfangl/commonchunkplugin-source-code#readme",
+  "devDependencies": {
+    "stats-webpack-plugin": "^0.4.3"
+  },
+  "dependencies": {
+    "webpack-child-compiler": "^1.0.0",
+    "webpack-html-plugin": "^0.1.1"
+  }
 }

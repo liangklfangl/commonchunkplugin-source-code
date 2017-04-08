@@ -27,7 +27,7 @@
 
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		6: 0
+/******/ 		4: 0
 /******/ 	};
 
 /******/ 	// The require function
@@ -137,16 +137,12 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 4:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 // var $ = require('jquery');
 
@@ -163,20 +159,65 @@
 
 //code splitting
 if (document.querySelectorAll('a').length) {
-    Promise.all/* require.ensure */([__webpack_require__.e(4), __webpack_require__.e(0)]).then((function () {
-        var Button = __webpack_require__(0).default;
-        var button = new Button('google.com');
+    __webpack_require__.e/* require.ensure */(3).then((() => {
+        const Button = __webpack_require__(3).default;
+        const button = new Button('google.com');
         button.render('a');
     }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 }
 
 if (document.querySelectorAll('h1').length) {
-    Promise.all/* require.ensure */([__webpack_require__.e(2), __webpack_require__.e(0)]).then((function () {
-        var Header = __webpack_require__(2).default;
+    __webpack_require__.e/* require.ensure */(1).then((() => {
+        const Header = __webpack_require__(5).default;
         new Header().render('h1');
     }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 }
 
-/***/ })
+// 
+// console.log('index');
 
-/******/ });
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// var $ = require('jquery');
+
+// $('body').html('Hello');
+
+
+// import $ from 'jquery';
+// $('body').html('Hello');
+
+
+// import Button from './Components/Button';
+// const button = new Button('google.com');
+//  button.render('a');
+
+//code splitting
+if (document.querySelectorAll('a').length) {
+    __webpack_require__.e/* require.ensure */(2).then((() => {
+        const Button = __webpack_require__(4).default;
+        const button = new Button('google.com');
+        button.render('a');
+    }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+}
+
+if (document.querySelectorAll('h1').length) {
+    __webpack_require__.e/* require.ensure */(0).then((() => {
+        const Header = __webpack_require__(6).default;
+        new Header().render('h1');
+    }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+}
+// 
+// console.log('index1');
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(0);
+module.exports = __webpack_require__(1);
+
+
+/***/ })
+/******/ ]);

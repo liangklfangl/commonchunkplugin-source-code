@@ -26,3 +26,5 @@ if (document.querySelectorAll('h1').length) {
         new Header().render('h1');
     });
 }
+// 
+// console.log('index1');

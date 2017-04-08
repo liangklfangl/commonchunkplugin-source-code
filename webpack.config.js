@@ -1,25 +1,29 @@
 var webpack = require('webpack');
-
+var StatsPlugin = require('stats-webpack-plugin');
+// var MyPlugin = require("webpack-child-compiler");
+var HTMLPlugin = require('webpack-html-plugin');
 module.exports = {
-    entry:  {
-         main:'./src/index.js',
-         main1:'./src/index1.js'
-    },
+    entry:  ['./src/index.js','./src/index1.js'],
+    profile:true,
     output: {
-        path:     'builds',
+        path:  'builds',
         // filename: '[chunkhash].output.js',
         filename: "[name].entry.chunk.js",
         publicPath: 'builds/',
     },
     plugins: [
 
+       new HTMLPlugin()
         //配置aync的demo
-        new webpack.optimize.CommonsChunkPlugin({
-            async: true,
-            name:     ['main','main1'], // Move dependencies to our main file
-            minChunks: 2, // How many times a dependency must come up before being extracted
-        }),
-
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     async: true,
+        //     name:     ['main','main1'], // Move dependencies to our main file
+        //     minChunks: 2, // How many times a dependency must come up before being extracted
+        // }),
+         // new StatsPlugin('stats.json', {
+         //      chunkModules: true,
+         //      exclude: [/node_modules[\\\/]react/]
+         //    })
           
           //配置children的demo
          // new webpack.optimize.CommonsChunkPlugin({

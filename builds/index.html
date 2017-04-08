@@ -1,0 +1,95 @@
+Html Webpack Plugin:
+<pre>
+  TypeError: Cannot read property 'request' of undefined
+  
+  - ExternalModuleFactoryPlugin.js:37 handleExternals
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[webpack]/lib/External    ModuleFactoryPlugin.js:37:33
+  
+  - ExternalModuleFactoryPlugin.js:46 next
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[webpack]/lib/External    ModuleFactoryPlugin.js:46:8
+  
+  - ExternalModuleFactoryPlugin.js:59 handleExternals
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[webpack]/lib/External    ModuleFactoryPlugin.js:59:7
+  
+  - ExternalModuleFactoryPlugin.js:79 ExternalModuleFactoryPlugin.<anonymous>
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[webpack]/lib/External    ModuleFactoryPlugin.js:79:5
+  
+  - NormalModuleFactory.js:233 
+    [commonchunkplugin-source-code]/[webpack]/lib/NormalModuleFactory.js:233:3
+  
+  - Tapable.js:196 NormalModuleFactory.applyPluginsAsyncWaterfall
+    [commonchunkplugin-source-code]/[tapable]/lib/Tapable.js:196:70
+  
+  - NormalModuleFactory.js:217 NormalModuleFactory.create
+    [commonchunkplugin-source-code]/[webpack]/lib/NormalModuleFactory.js:217:8
+  
+  - Compilation.js:377 Compilation._addModuleChain
+    [commonchunkplugin-source-code]/[webpack]/lib/Compilation.js:377:17
+  
+  - Compilation.js:455 Compilation.addEntry
+    [commonchunkplugin-source-code]/[webpack]/lib/Compilation.js:455:8
+  
+  - SingleEntryPlugin.js:22 SingleEntryPlugin.<anonymous>
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[webpack]/lib/SingleEn    tryPlugin.js:22:15
+  
+  - Tapable.js:229 Compiler.applyPluginsParallel
+    [commonchunkplugin-source-code]/[tapable]/lib/Tapable.js:229:14
+  
+  - Compiler.js:469 
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:469:8
+  
+  - Tapable.js:131 Compiler.applyPluginsAsyncSeries
+    [commonchunkplugin-source-code]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compiler.js:462 Compiler.compile
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:462:7
+  
+  - Compiler.js:266 Compiler.runAsChild
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:266:7
+  
+  - compiler.js:75 
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/lib/compiler.js:75:19
+  
+  - debuggability.js:300 Promise._execute
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[bluebird]/js/release/    debuggability.js:300:9
+  
+  - promise.js:481 Promise._resolveFromExecutor
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[bluebird]/js/release/    promise.js:481:18
+  
+  - promise.js:77 new Promise
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/[bluebird]/js/release/    promise.js:77:14
+  
+  - compiler.js:74 Object.compileTemplate
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/lib/compiler.js:74:10
+  
+  - index.js:63 Compiler.<anonymous>
+    [commonchunkplugin-source-code]/[webpack-html-plugin]/index.js:63:40
+  
+  - Tapable.js:229 Compiler.applyPluginsParallel
+    [commonchunkplugin-source-code]/[tapable]/lib/Tapable.js:229:14
+  
+  - Compiler.js:469 
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:469:8
+  
+  - Tapable.js:131 Compiler.applyPluginsAsyncSeries
+    [commonchunkplugin-source-code]/[tapable]/lib/Tapable.js:131:46
+  
+  - Compiler.js:462 Compiler.compile
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:462:7
+  
+  - Compiler.js:220 
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:220:10
+  
+  - Compiler.js:372 Compiler.readRecords
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:372:10
+  
+  - Compiler.js:217 
+    [commonchunkplugin-source-code]/[webpack]/lib/Compiler.js:217:9
+  
+  - Tapable.js:138 next
+    [commonchunkplugin-source-code]/[tapable]/lib/Tapable.js:138:11
+  
+  - CachePlugin.js:35 Compiler.compiler.plugin
+    [commonchunkplugin-source-code]/[webpack]/lib/CachePlugin.js:35:59
+  
+</pre><script type="text/javascript" src="builds/main.entry.chunk.js"></script>
